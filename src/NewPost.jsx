@@ -22,7 +22,15 @@ const NewPost = ({ id }) => {
   return (
     <div>
       <h1>{postQuery.data.userId}</h1>
-      <h2>{userQuery?.data?.name}</h2>
+      <h2>
+        {userQuery.status == "loading" ? (
+          <p>Loading...</p>
+        ) : userQuery.status == "error" ? (
+          <p>{userQuery.error}</p>
+        ) : (
+          <p>{userQuery.data.name}</p>
+        )}
+      </h2>
     </div>
   );
 };
