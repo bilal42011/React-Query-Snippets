@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { getSinglePost, getUser } from "./apis";
 
-const NewPost = ({ id }) => {
+const FirstPost = ({ id }) => {
   let postQuery = useQuery({
     queryKey: ["posts", id],
     queryFn: getSinglePost,
@@ -35,4 +35,4 @@ const NewPost = ({ id }) => {
   );
 };
 
-export default NewPost;
+export default FirstPost;

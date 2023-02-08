@@ -29,3 +29,9 @@ export const getUser = ({ queryKey }) => {
       return res.data;
     });
 };
+
+export const createPost = (postObj) => {
+  return axios
+    .post("https://jsonplaceholder.typicode.com/posts", postObj)
+    .then((res) => res.data);
+};
