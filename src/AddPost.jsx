@@ -10,9 +10,15 @@ const AddPost = () => {
     mutationFn: createPost,
   });
 
-const onCreatePost = ()=>{
-    
-}
+  const onCreatePost = (e) => {
+    e.preventDefault();
+    createPostMutation.mutate({
+      title: titleRef.current.value,
+      body: createPostMutation.current.value,
+      userId: 1,
+      id: Date.now(),
+    });
+  };
 
   return (
     <div>
@@ -23,7 +29,7 @@ const onCreatePost = ()=>{
         <label ref={bodyRef}>Body</label>
         <input type="text" placeholder="Enter Body"></input>
       </div>
-      <button>Create</button>
+      <button onClick={onCreatePost}>Create</button>
     </div>
   );
 };
