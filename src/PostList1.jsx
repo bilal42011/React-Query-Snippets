@@ -5,6 +5,10 @@ const PostList1 = () => {
   let postsQuery = useQuery({
     queryKey: ["posts"],
     queryFn: getPosts,
+    initialData: [
+      { id: 1, userId: 1, title: "initial title", body: "initial body" },
+    ],
+    staleTime: 5000,
   });
 
   console.log(postsQuery.fetchStatus);
